@@ -1,0 +1,46 @@
+Insights from data exploration and storage/query speed explained 
+
+
+From my data exploration step I was able to see the type of data that is stored in each of the field and how the data is organized. 
+
+I need to fix the type of data that is stored in the 6th column the data type is mixed up. 
+
+When I ran a pandas script I found the type of data in each field.
+
+VendorID                 float64
+tpep_pickup_datetime      object
+tpep_dropoff_datetime     object
+passenger_count          float64
+trip_distance            float64
+RatecodeID               float64
+store_and_fwd_flag        object
+PULocationID               int64
+DOLocationID               int64
+payment_type             float64
+fare_amount              float64
+extra                    float64
+mta_tax                  float64
+tip_amount               float64
+tolls_amount             float64
+improvement_surcharge    float64
+total_amount             float64
+congestion_surcharge     float64
+
+To clean up the data I think it would be best discard the vendorID, and store_and_fwd_flag fields. This information will not hold much value to the analyst in solving their problems.  With that being said this will also solve the data type error
+That we are getting on the 6th column which corresponds to the  store_and_fwd_flag fields.
+
+We will need to add a new table to show Rate codes and what the different numbers mean. 
+
+Another thing I will need to do to clean up the data is that before 2015 there was no Improvement_surcharge of .30.  To normalize the data I will Either need to get rid of the column all together or I will need to create a blank column and set the value to zero. Since there was no charge before that year. 
+
+
+https://www1.nyc.gov/assets/tlc/downloads/pdf/data_dictionary_trip_records_yellow.pdf
+This website is really important because it shows what is being stored in each of the different fields. 
+
+I think it would be best to create also create a new table with where the LocationID are referring to- what part of 
+New York so it makes it easier to see where the data is pointing to. 
+
+The best way to compress the files and data would be to use lossless compression method.
+
+
+ 
