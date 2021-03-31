@@ -8,3 +8,7 @@ that have the cab information.
 ## import_data.py 
 
 In this file you will find code that will read a CSV file to look at the data. 
+
+## DataExploration.ipynb 
+In this file you will find a jupyter notebook that will take you throught the data exploration process that I conducted. 
+
